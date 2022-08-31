@@ -1,0 +1,17 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user._id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td><a class="btn btn-primary" routerLink="singleUser/{{user._id}}">View</a></td>
+        </tr>
+    </tbody>
+</table>

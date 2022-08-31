@@ -1,0 +1,19 @@
+<form [formGroup]="loginForm" (ngSubmit)="handleLogin()">
+    <div class="row">
+        <div class="mb-3">
+            <input class="w-75" placeholder="Email" formControlName="email">
+        </div>
+        <div class="alert alert-danger" *ngIf="email?.['errors'] && (email?.dirty || email?.touched)">
+            <li *ngIf="email?.['errors']?.['required']"> Email is Required</li>
+            <li *ngIf="email?.['errors']?.['email']"> Email is invalid</li>
+        </div>
+        <div class="mb-3">
+            <input class="w-75" placeholder="Password" formControlName="password">
+        </div>
+        <div class="alert alert-danger" *ngIf="password?.['errors'] && (password?.dirty || password?.touched)">
+            <li *ngIf="password?.['errors']?.['required']"> Password is Required</li>
+            <li *ngIf="password?.['errors']?.['minlength']"> Password is less than 6 letters</li>
+        </div>
+    </div>
+    <button class="btn btn-primary">Login</button>
+</form>
